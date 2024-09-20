@@ -23,9 +23,12 @@ public class StudentController {
 		
 		
 		List<Student> studentList = studentDAO.loadStudents();
+		
 		model.addAttribute("students",studentList);
 		
 		return "student-list";
+		
+		
 	}
 
 }

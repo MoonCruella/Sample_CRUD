@@ -2,6 +2,7 @@ package sm.DAO;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
@@ -10,7 +11,10 @@ import sm.rowmapper.StudentRowMapper;
 
 @Repository
 public class StudentDAOImpl implements IStudentDAO {
-	JdbcTemplate jdbcTemplate;
+	
+	@Autowired
+	private JdbcTemplate jdbcTemplate;
+	
 	
 	@Override
 	public List<Student> loadStudents() {
