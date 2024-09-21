@@ -89,6 +89,16 @@ public class StudentController {
 		
 	}
 	
-	
+	@GetMapping("/deleteStudent")
+	public String deleteStudent(@RequestParam("userId") int id) {
+		
+		// capture the id of the student whom you are trying to delete
+		// once captured the id, do a service call to delete the student
+		studentService.deleteStudent(id);
+		
+		return "redirect:/showStudent";
+		
+		
+	}
 	
 }

@@ -9,8 +9,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1 align = "center">Selenium Express</h1>
-
+	<h1 align = "center" style = "color : green;">Selenium Express</h1>
+	<h1 align = "center" style = "color : red;">Student management</h1>
 	<div align = "center">
 	
 		<form action = "showAddStudentPage">
@@ -37,6 +37,7 @@
 	          <td>${student.mobile}</td>
 			  <td>${student.country}</td>
 			  <td><a href = "/student-management/updateStudent?userId=${student.id}">Update</a> </td>
+			   <td><a href = "/student-management/deleteStudent?userId=${student.id}" onclick = "if(!confirm('Are you sure to delete this student?')) return false">Delete</a> </td>
 	        </tr>	
 	      </c:forEach>
 	
