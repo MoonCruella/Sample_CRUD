@@ -28,4 +28,39 @@ public class StudentDAOImpl implements IStudentDAO {
 		return theListOfStudent;
 	}
 
+
+	@Override
+	public void saveStudent(Student student) {
+		
+		Object[] sqlParameters = {student.getName(),student.getMobile(),student.getCountry()};
+		
+		String sql = "Insert into students(name,mobile,country) values (?,?,?)";
+		
+		jdbcTemplate.update(sql, sqlParameters);
+		
+		System.out.println("1 record inserted...");
+		
+	}
+
+
+	@Override
+	public Student getStudent(int id) {
+		
+		String sql = "Select * from STUDENTS where ID = ?";
+	
+		Student student = jdbcTemplate.queryForObject(sql, new StudentRowMapper(), id);
+		
+		return student;
+	}
+
+
+	@Override
+	public void update(Student student) {
+		String sql = "Update students set name = ?, mobile = ? , country = ? where id = ?";
+		
+		jdbcTemplate.update(sql,student.getName(),student.getMobile(),student.getCountry(),student.getId());
+		
+		System.out.println("1 record updated..");
+	}
+
 }

@@ -12,6 +12,13 @@
 	<h1 align = "center">Selenium Express</h1>
 
 	<div align = "center">
+	
+		<form action = "showAddStudentPage">
+		 
+		  <input type = "submit" value = "ADD">
+		
+		</form>
+		
 		<table border = "1">
 		  <thead>
 		  	<tr>
@@ -29,6 +36,7 @@
 			  <td>${student.name}	</td>
 	          <td>${student.mobile}</td>
 			  <td>${student.country}</td>
+			  <td><a href = "/student-management/updateStudent?userId=${student.id}">Update</a> </td>
 	        </tr>	
 	      </c:forEach>
 	
